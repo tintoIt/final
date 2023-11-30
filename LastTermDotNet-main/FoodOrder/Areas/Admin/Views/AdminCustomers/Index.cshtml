@@ -1,0 +1,69 @@
+﻿@model IEnumerable<FoodOrder.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <h2 class="header-title">Danh sách tài khoản</h2>
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <span class="breadcrumb-item active">Danh sách tài khoản</span>
+        </nav>
+    </div>
+</div>
+
+<div class="card">
+    
+    <div class="table-responsive">
+        <table class="table table-hover e-commerce-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>FullName</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Quyền truy cập</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.CustomerId
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid rounded" src="assets/images/others/thumb-9.jpg" style="max-width: 60px" alt="">
+                                    <h6 class="m-b-0 m-1-10">@item.Name</h6>
+                                </div>
+                            </td>
+                            <td>@item.Email</td>
+                            <td>@item.Email</td>
+                            <td>@item.Subject</td>
+                            <td>@item.Message</td>
+                            <td>@item.CreatedDate</td>
+                            
+                            <td>
+                                <a class="btn btn-outline-success btn-tone m-r-5" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Details" asp-route-id="@item.CustomerId">View</a>
+                                <a class="btn btn-outline-secondary btn-tone m-r-5" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a>
+                                <a class="btn btn-outline-danger btn-tone m-r-5" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
+                                <a class="btn btn-outline-primary btn-tone m-r-5" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Create" asp-route-id="@item.CustomerId">Create</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

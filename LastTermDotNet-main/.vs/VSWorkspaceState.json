@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Bin",
+    "\\feane-1.0.0",
+    "\\FoodOrder",
+    "\\FoodOrder\\Areas",
+    "\\FoodOrder\\Areas\\Admin",
+    "\\FoodOrder\\Areas\\Admin\\Views",
+    "\\FoodOrder\\Areas\\Admin\\Views\\AdminRoles",
+    "\\FoodOrder\\Views",
+    "\\FoodOrder\\Views\\Home"
+  ],
+  "SelectedNode": "\\FoodOrder\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}
